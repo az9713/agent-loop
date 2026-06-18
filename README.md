@@ -1,4 +1,4 @@
-# agent-loop
+# game-dev-loop
 
 **An autonomous, agentic development loop for Claude Code.** Given a single
 brief, the agent runs a compound-engineering cycle — **brainstorm → plan → build
