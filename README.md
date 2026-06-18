@@ -89,6 +89,55 @@ heirs, and your neighbours' relations (`+/-` and `WAR`).
 The game ends when your bloodline dies out with no heir — a succession crisis —
 or when you abdicate (Ctrl+C).
 
+### A worked example: one turn
+
+Start a game with `python kingdom.py --seed 89`. First you see your realm:
+
+```text
+  Year 1085 | Corwick | Ruler: Mormund (26) [Shrewd, Patient]   # when / where / who you are
+  Gold 200g | Tax 25% | Army 300 | Pop 5000                      # your resources
+  Prosperity 50 | Stability 60 | Legitimacy 60                   # realm health, each 0–100
+  Heirs: Dunwyn (4), Joryra (21)                                 # who inherits if you die
+  Neighbours: Istmere(-19), Lormark(+14), Torhelm(+9)            # relations: minus = hostile
+```
+
+Then an **event** demands a response — type the number and press Enter:
+
+```text
+EVENT: An envoy from Lormark proposes a trade pact.
+   [1] Accept the pact
+   [2] Refuse
+   > 1            # you accept — relations with Lormark rise and trade gold flows in
+```
+
+Next, your one **decree** for the year:
+
+```text
+DECREE: choose your action
+   [1] Raise taxes (+10%)
+   [2] Lower taxes (-10%)
+   [3] Invest in the realm (-50g)
+   [4] Recruit soldiers (-40g)
+   [5] Hold a feast (-30g)
+   [6] Send gifts to Istmere (-30g)
+   [7] Declare war on Istmere
+   [8] Hold court (do nothing bold)
+   > 7            # Istmere is hostile (-19), and your army is strong — you march
+```
+
+The turn resolves and the consequences print:
+
+```text
+Victory over Istmere! Plunder: +111g, losses: 79 troops.
+A child is born to the royal house: Torwin.
+```
+
+Then a new year's status panel appears and you do it again. That's the whole
+game: **read the panel → answer the event → issue one decree → repeat**, keeping
+your dynasty on the throne for as long as you can. (The menu options shift with
+the situation — e.g. "Declare war" only appears when a neighbour is hostile — so
+read the list each turn rather than memorising numbers.)
+
 ### Tips
 - Debt (negative gold) erodes stability. High taxes raise gold but cost
   stability; prosperity follows stability over time.
